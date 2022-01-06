@@ -1,0 +1,51 @@
+
+“command #1: ps aux | wc -l”
+213
+
+“command #2: ps -eo nlwp | tail -n +2 | awk '{ num_threads += } END { print num_threads }'”
+480
+
+“command #3: uname -r”
+5.8.0-50-generic
+
+“command #4: lscpu | egrep 'Model name'”
+Model name:                      AMD Ryzen 5 3600 6-Core Processor
+
+“command #5: grep MemTotal /proc/meminfo”
+MemTotal:        3931596 kB
+
+“command #6: df -h /”
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda5        39G  8.9G   28G  25% /
+
+“command #7: df -ih /”
+Filesystem     Inodes IUsed IFree IUse% Mounted on
+/dev/sda5        2.5M  206K  2.3M    9% /
+
+“command #8: ping -c 10 www.google.com”
+PING www.google.com (172.217.14.196) 56(84) bytes of data.
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=1 ttl=57 time=12.8 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=2 ttl=57 time=20.5 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=3 ttl=57 time=12.5 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=4 ttl=57 time=13.1 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=5 ttl=57 time=14.1 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=6 ttl=57 time=12.5 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=7 ttl=57 time=13.1 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=8 ttl=57 time=17.0 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=9 ttl=57 time=18.0 ms
+64 bytes from sea30s01-in-f4.1e100.net (172.217.14.196): icmp_seq=10 ttl=57 time=15.0 ms
+
+--- www.google.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9046ms
+rtt min/avg/max/mdev = 12.507/14.875/20.538/2.620 ms
+
+“command #9: nmcli connection show”
+NAME                UUID                                  TYPE      DEVICE 
+Wired connection 1  2d5d3504-316b-3d35-b176-7fc2bc61ad0f  ethernet  enp0s3 
+
+“command #10: df -T /”
+Filesystem     Type 1K-blocks    Used Available Use% Mounted on
+/dev/sda5      ext4  40503552 9257032  29159352  25% /
+
+“command #11: ip -o addr show scope global | awk '{split($4, a, "/"); print $2" : "a[1]}'”
+enp0s3 : 10.0.2.15

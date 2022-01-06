@@ -1,0 +1,35 @@
+1. 213 processes
+
+2. 480 threads
+
+3. 5.8.0-50-generic
+
+4. AMD Ryzen 5 3600 6-Core Processor
+   Launched July 7, 2019
+   Release Price $199
+   
+5. 3931596 kB = 3931.596 mb virtual memory
+
+6. 28 gb = 28000 mb free disk space
+
+7. 2.5M Inodes
+
+8. 14.875 ms
+
+9. Network interface device name: enp0s3
+
+10. File system type: ext4
+
+    The EXT filesystem(extended), written by Rémy Card, was released with
+    Linux in 1992 to overcome size limitations of the Minix filesystem. The EXT4 
+    filesystem provides improvements in performance, reliability, and capacity.
+    
+    Two most recently added features: casefold and encrypt
+    
+    encrypt enables file-system level encryption of data blocks and file names. 
+    This is useful for file systems with multiple users and where not all files 
+    should be encrypted.
+    
+11. Network interface device IP address: 10.0.2.15
+
+12. unanswered

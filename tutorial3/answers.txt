@@ -1,0 +1,81 @@
+Q. What file must be included to use the readdir() API?
+       #include <dirent.h>
+
+Q. How long does it take in milliseconds to run the original unmodified wtest.c program?
+       real    0m0.001s
+       user    0m0.001s
+       sys     0m0.000s
+
+Q. How long does it take in milliseconds to run the modified wtest.c program?
+       real    0m0.001s
+       user    0m0.001s
+       sys     0m0.000s
+
+Q. If the runtime of the modified program has changed, what is likely the cause?
+       The runtime did not change. If the runtime did change, it would likely 
+       be longer because fsync is a routine that forces writes to disk and does
+       not return until all of the writes are complete.
+
+Q. What is the difference between the inode number of the hard vs. the symbolic link?
+       original: 2375337
+       hard link: 2375337 
+       symbolic link: 2365020
+       The hard link's inode number is the same as the original file while the
+       symbolic links inode number is different.
+
+Q. What happens to the hard link when the original linked file is deleted?
+       Nothing, the hard link appears to remain the same.
+
+Q. What happens to the symbolic link when the original linked file is deleted?
+       The symbolic link file can no longer be opened. It is a dangling
+       reference now because the pathname it points to no longer exists.
+
+Q. “update-alternatives” remaps the python command to point to the selected Python interpreter. How can
+the selected interpreter be bypassed to run a program using python version 2?
+       It can be bypassed by using the "update-alternatives" command to switch
+       to python version 2, selecting option 1.
+
+Q. Which /tmp directory had better sysbench throughput? The standard /tmp or the symbolically linked
+/tmp that was created on a ramdisk? 
+       The symbolically linked /tmp that was created on a ramdisk had better sysbench throughput.
+
+Q. Please provide /tmp throughput numbers
+       standard /tmp
+       Throughput:
+       read, MiB/s:                  34.22
+       written, MiB/s:               22.81
+
+       symbolically linked /tmp
+       Throughput:
+       read, MiB/s:                  2431.44
+       written, MiB/s:               1620.96
+
+Q. Which filesystem had the highest read/write throughput results measured in MiB/s?
+       ext4 with journaling had the highest read/write throughput.
+
+Q. Please report your read/write throughput values for all three tests:
+ext2:
+       Throughput:
+       read, MiB/s:                  32.52
+       written, MiB/s:               21.68
+ext4 with journaling:
+       Throughput:
+       read, MiB/s:                  34.05
+       written, MiB/s:               22.70
+ext4 without journaling:
+       Throughput:
+       read, MiB/s:                  31.54
+       written, MiB/s:               21.03
+
+Q. One inode is created for every storage block on the disk. How large is this storage block size in KB for
+which an inode is created? 
+       4 KB
+
+Q. How many inodes are created?
+       25600 inodes
+
+Q. What % of inodes are in use initially on the /mnt3 file system mount?
+       1%
+
+Q. What % of inodes are in use with the revised inode ratio on the /mnt3 file system mount?
+       14%
